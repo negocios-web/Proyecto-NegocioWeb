@@ -240,4 +240,7 @@ router.get('/verListaClaseAlumnosMatriculadas/:idOfertaClase', async (req, res) 
 
 });
 
+router.get('/pagos', async (req, res) => {
+    res.render('links/pagos');
+});
 module.exports = router;
