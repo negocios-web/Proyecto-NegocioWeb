@@ -1,0 +1,48 @@
+<form class="container login" id="" method="POST" action="/links/guardarMatriculaAlumno">
+		<div class="row">
+			<h1 class="text-center">Matricula</h1> 				
+  				<div class="container">
+  					<br>
+  	<div class="row">
+		<div class="col-md-5">
+		 <h3>Clase</h3>
+     <br>
+          <select required="" class="form-control" name="nombreClase" id="nombreClase2">
+            <option value="">Seleccione...</option>
+			{{#each clases}}
+				<option value="{{idOfertaClase}}"> <strong>{{nombreClase}}</strong> ({{idClase}}) {{horaInicio}}-{{horaFinal}}</option>
+				
+			{{/each}}
+            
+          </select>
+				</div>
+      
+		<div class="col-md-5">
+			<h3>Alumno </h3>
+      <br>
+      
+		<select required="" class="form-control" name="listadoAlumnos" id="listadoAlumnos">
+            <option value="">Seleccione...</option>
+			{{#each alumnos}}
+				<option value="{{numeroCuenta}}">{{nombreCompleto}}</option>
+			{{/each}}
+            
+          </select>
+		  </div>
+    
+				<div class="col-md-2">
+					<br>
+          <br>
+					<button class="btn btn-primary" type="submit">Guardar</button>
+          <a class="btn btn-primary" href="/links/login">Cancelar</a>
+				
+        </center>
+        </div>
+      </div>
+        
+      </div>
+
+</form>
+
+
+			

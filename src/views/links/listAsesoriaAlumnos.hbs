@@ -1,0 +1,31 @@
+<div class="container" id="formulario-listadoAlumno" align=""> 
+      <div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<br>
+	<h2>ASESORIA ({{link.id_clase}}) {{link.nombreClase}}</h2>
+	<br>
+
+<table class="table table-hover">
+	<thead >
+    	<tr>
+			<td scope="col">Numero cuenta</td>
+			<td scope="col">Nombre Alumno</td>
+		</tr>
+	</thead>
+  	<tbody>
+      {{#each links}}
+			<tr>
+				<td>{{numeroCuenta}}</td>
+				<td>{{nombreCompleto}}</td>
+			</tr>
+		{{/each}}
+			 
+  			</tbody>
+		</table>
+		<div class="row" align="right">
+		<a class="btn btn-primary" href="/links/listadoClasesAsesoradas">Atras</a>
+		</div>
+	</div>
+</div>
+  </div>

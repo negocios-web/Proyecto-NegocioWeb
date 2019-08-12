@@ -1,0 +1,442 @@
+<form class="container login" id="formulario-matricula" method="POST" action="/links/guardarAsesoriaAlumno">
+		<div class="row">
+			<h1 class="text-center">Matricula</h1> 				
+  				<div class="container">
+  					<br>
+  					
+		<div class="col-md-4">
+		 <h3>Clase</h3>
+          <select required="" class="form-control" name="nombreClase" id="nombreClase2">
+            <option value="">Seleccione...</option>
+			{{#each clases}}
+				<option value="{{id_clase}}">{{nombreClase}}</option>
+				
+			{{/each}}
+            
+          </select>
+				</div>
+        
+		<div class="col-md-4">
+			<h3>Alumno </h3>
+		<select required="" class="form-control" name="listadoAlumnos" id="listadoAlumnos">
+            <option value="">Seleccione...</option>
+			{{#each alumnos}}
+				<option value="{{numeroCuenta}}">{{nombreCompleto}}</option>
+			{{/each}}
+            
+          </select>
+		  </div>
+				<div class="col-md-4">
+					<br>
+					<button class="btn btn-primary" type="submit">Guardar</button>
+          <a class="btn btn-primary" href="/links/login">Cancelar</a>
+				</div>
+
+			</div>
+		</div>
+	</form>
+
+		<div class="col-md-6 about-rightgrid" style="margin: 50px;">
+		<div class="polls">
+					<div class="poll">
+						<div class="poll-desc">
+							<h4>:)</h4>
+						</div>
+						<div class="percentage">
+							<p>25%</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="skills">
+			              	<div style="width:25%"> </div>
+	                      </div>
+	           <div class="container">
+	            <br>
+				<div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">I</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button onclick="abrirMatricula('ES101')" type="button" id="ES101" style="height: 110%; width: 130%;" class="btn btn-primary">ESPAÑOL<br> ES101</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MT101" onclick="abrirMatricula('MT101')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">MATEMATICAS<br> MT101</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="SC101" onclick="abrirMatricula('SC101')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">SOCIOLOGIA<br> SC101</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="IF101" onclick="abrirMatricula('IF101')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">INFORMATICA<br> IF101</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="FI101" onclick="abrirMatricula('FI101')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">FILOSOFIA<br>FI101</button>
+                </div>
+
+              </div>
+              <br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">II</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="ES201" onclick="abrirMatricula('ES201')" style="height: 110%; width: 130%;" class="btn btn-primary">EXPRESION ORAL<br> ES201</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CT201" onclick="abrirMatricula('CT201')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">CONTABILIDAD <br> CT201</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MT201" onclick="abrirMatricula('MT201')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">PRE-CALCULO<br> MT201</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="IF201" onclick="abrirMatricula('IF201')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">INFORMATICA<br> IF201</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="CR201" onclick="abrirMatricula('CR201')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">EL HOMBRE FRENTE A LA VIDA<br>CR201</button>
+                </div>
+
+              </div>
+				<br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">III</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="MT202" onclick="abrirMatricula('MT202')" style="height: 110%; width: 130%;" class="btn btn-primary">ESTADISTICA I <br> MT202</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CT301" onclick="abrirMatricula('CT301')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">CONTABILIDAD II<br> CT301</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FI102" onclick="abrirMatricula('FI102')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">CIENCIA Y TECNOLOGIA<br> FI102</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD101" onclick="abrirMatricula('AD101')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">ADMINISTRACION I <br> AD101</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="HS101" onclick="abrirMatricula('HS101')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">HISTORIA DE HONDURAS<br>HS101</button>
+                </div>
+
+              </div>
+			</div>
+	                      </div>
+	                      <div class="polls">
+					<div class="poll">
+						<div class="poll-desc">
+							<h4>I Retiro</h4>
+						</div>
+						<div class="percentage">
+							<p>50%</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="skills">
+			              	<div style="width:50%"> </div>
+	                      </div>
+	                      <div class="container">
+	            <br>
+				<div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">IV</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="AD302" onclick="abrirMatricula('AD302')" style="height: 110%; width: 130%;" class="btn btn-primary">METODOS Y TECNICAS<br> AD302</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CT403" onclick="abrirMatricula('CT403')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">CONTABILIDAD ADMINISTRATIVA I<br> CT403</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MT204" onclick="abrirMatricula('MT204')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">MATEMATICA FINANCIERA<br> MT204</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD201" onclick="abrirMatricula('AD201')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">ADMINISTRACION II<br> AD201</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD207" onclick="abrirMatricula('AD207')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">PSICOLOGIA EMPRESARIAL<br>AD207</button>
+                </div>
+
+              </div>
+              <br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">V</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="MT302" onclick="abrirMatricula('MT302')" style="height: 110%; width: 130%;" class="btn btn-primary">ESTADISTICA II<br> MT302</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CT501" onclick="abrirMatricula('CT501')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">CONTABILIDAD ADMINISTRATIVA II<br>  CT501</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FZ301" onclick="abrirMatricula('FZ301')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">ADMINISTRACION FINANCIERA I<br> FZ301</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MC201" onclick="abrirMatricula('MC201')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">MERCADOTECNIA I<br> MC201</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD202" onclick="abrirMatricula('AD202')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">RECURSOS HUMANOS <br>AD202</button>
+                </div>
+
+              </div>
+				<br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">VI</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="MC301" onclick="abrirMatricula('MC301')" style="height: 110%; width: 130%;" class="btn btn-primary">INVESTIGACION DE MAERCADOS I<br> MC301</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CE201" onclick="abrirMatricula('CE201')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">MICROECONOMIA<br>CE201</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FZ401" onclick="abrirMatricula('FZ401')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">ADMINISTRACION FINANCIERA II <br> FZ401</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="LG201" onclick="abrirMatricula('LG201')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">LEGISLACION EMPRESARIAL<br>LG201</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD314" onclick="abrirMatricula('AD314')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">RELACIONES DE TRABAJO<br>AD314</button>
+                </div>
+
+              </div>
+			</div>
+	                      </div>
+	                      <div class="polls">
+					<div class="poll">
+						<div class="poll-desc">
+							<h4>II Retiro</h4>
+						</div>
+						<div class="percentage">
+							<p>75%</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="skills">
+			              	<div style="width:75%"> </div>
+	                      </div>
+	                      <div class="container">
+	            <br>
+				<div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">VII</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="PR408" onclick="abrirMatricula('PR408')" style="height: 110%; width: 130%;" class="btn btn-primary">INVESTIGACION DE OPERACIONES<br>PR408</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MC402" onclick="abrirMatricula('MC402')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">VENTAS<br>MC402</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="CE304" onclick="abrirMatricula('CE304')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">MACROECONOMIA<br>CE304</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FZ506" onclick="abrirMatricula('FZ506')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">MERCADOS FINANCIEROS<br> FZ506</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD403" onclick="abrirMatricula('AD403')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">COMPORTAMIENTO HUMANO<br>AD403</button>
+                </div>
+
+              </div>
+              <br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">VIII</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="PR301" onclick="abrirMatricula('PR301')" style="height: 110%; width: 130%;" class="btn btn-primary">INGENIERIA DE METODOS<br>PR301</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MC410" onclick="abrirMatricula('MC410')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">PUBLICIDAD I<br> MC410</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FZ513" onclick="abrirMatricula('FZ513')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">FINANZAS PUBLICAS<br> FZ513</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD308" onclick="abrirMatricula('AD308')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">NEGOCIACION INTERNACIONAL<br> AD308</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD316" onclick="abrirMatricula('AD316')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">PROTECCION Y RIESGO EMPRESARIAL <br>AD316</button>
+                </div>
+
+              </div>
+				<br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">IX</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="AD104" onclick="abrirMatricula('AD104')" style="height: 110%; width: 130%;" class="btn btn-primary">GESTION DE LA CALIDAD TOTAL<br> AD104</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="PR501" onclick="abrirMatricula('PR501')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">ADMINISTRACION DE LA PRODUCCION<br> PR501</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="FZ510" onclick="abrirMatricula('FZ510')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">ADMINISTRACION DE INSTITUCIONES<br> FZ510</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD105" onclick="abrirMatricula('AD105')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">ECOLOGIA EMPRESARIAL<br>AD105</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="MC412" onclick="abrirMatricula('MC412')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">COMERCIO INTERNACIONAL<br>MC412</button>
+                </div>
+
+              </div>
+			</div>
+	                      </div>
+	                      <div class="polls">
+					<div class="poll">
+						<div class="poll-desc">
+							<h4>TES</h4>
+						</div>
+						<div class="percentage">
+							<p>90%</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="skills">
+			              	<div style="width:90%"> </div>
+	                      </div>
+	                      <div class="container">
+	            <br>
+				<div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">X</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="MT304" onclick="abrirMatricula('MT304')" style="height: 110%; width: 130%;" class="btn btn-primary">CONTROL ESTADISTICO DEL CALIDAD<br> MT304</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD532" onclick="abrirMatricula('AD532')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">PLANEACION ESTRATEGICA<br>AD532</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD533" onclick="abrirMatricula('AD533')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">GESTION ESTRATEGICA DE AGROINDUSTRIAS<br>AD533</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MC511" onclick="abrirMatricula('MC511')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">MERCADOTECNIA INTERNACIONAL <br> MC511</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="AD208" onclick="abrirMatricula('AD208')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">GESTION DE EMPRESAS TURISTICAS<br>AD208</button>
+                </div>
+
+              </div>
+              <br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">XI</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="AD402" onclick="abrirMatricula('AD402')" style="height: 110%; width: 130%;" class="btn btn-primary">PLANEACION Y DISEÑO DE CALIDAD<br>AD402</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD401" onclick="abrirMatricula('AD401')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">FORMULACION DE PROYECTOS<br>AD401</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD563" onclick="abrirMatricula('AD563')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary botonclases">GESTION ESTRATEGICA DE AGROINDUSTRIAS<br> AD563</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="MC512" onclick="abrirMatricula('MC512')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">NEGOCIOS ELECTRONICOS<br> MC512</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="CR501" onclick="abrirMatricula('CR501')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary">DOCTRINA SOCIAL DE LA IGLESIA<br>CR501</button>
+                </div>
+
+              </div>
+				<br>
+              <div class="row" style="margin-right: 5px; margin-left: 20px;">
+				
+				<div class="col-md-1">
+                <h3 style="padding-top: 7%;">XII</h3>
+                </div>
+
+                <div class="col-md-2" style="text-align: center;">
+                <button type="button" id="AD504" onclick="abrirMatricula('AD504')" style="height: 110%; width: 130%;" class="btn btn-primary">SEMINARIO DE ADMINISTRACION<br> AD504</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD535" onclick="abrirMatricula('AD535')" style="height: 110%; width: 130%;  margin-left: 11%;" class="btn btn-primary">GESTION ESTRATEGICA DE PROYECTOS<br> AD535</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD536" onclick="abrirMatricula('AD536')" style="height: 110%; width: 130%; margin-left: 22%;" class="btn btn-primary">GESTION DE PEQUEÑA Y MEDIANA EMPRESA<br> AD536</button>
+                </div>
+
+                <div class="col-md-2">
+                <button type="button" id="AD537" onclick="abrirMatricula('AD537')" style="height: 110%; width: 130%; margin-left: 33%;" class="btn btn-primary">GESTION ESTRATEGICA DE EMPRESAS<br> AD537</button>
+                </div>
+
+                 <div class="col-md-2">
+                <button type="button" id="F1501" onclick="abrirMatricula('F1501')" style="height: 110%; width: 130%; margin-left: 44%;" class="btn btn-primary ">ETICA PROFESIONAL<br>F1501</button>
+                </div>
+
+              </div>
+			</div>
+	                      </div>
+		</div>
+
+			

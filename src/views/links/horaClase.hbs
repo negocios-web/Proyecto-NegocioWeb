@@ -1,0 +1,45 @@
+<form class="container login" id="formulario-hora" method="POST" action="/links/guardarOferta">
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <div class="col-md-8" align="center">
+          <div class="col-md-6" align="center">
+            <h3 style="padding-bottom: 2%;">Clase:</h3>
+                <div class="input-group" >
+                  
+                      <select required class="form-control" name="txtClaseAseso" id="txtClaseAseso">
+                        <option value="">Seleccione...</option>
+                        
+                        {{#each clases}}
+                          <option value="{{id_clase}}">{{nombreClase}}</option>
+                          
+                        {{/each}}
+                      </select>
+                    </div>  
+                </div>				
+  				<div class="col-md-6" align="center">
+  					<h3 style="padding-bottom: 2%;">Hora</h3>
+            <div class="input-group" >
+              <div class="col-md-6">
+  					   <input class="form-control" required type="time" name="txthoraInicio" value="">
+               </div>
+               <div class="col-md-6">
+               
+               <input class="form-control" required type="time" name="txthoraFinal" value="">
+               </div>
+               
+            </div>
+  				</div>
+					<br>
+          </div>
+          <div class="col-md-4" align="center">
+            <br>
+            <br>
+					 <button type="submit" class="btn btn-primary" id="btnGuardarHorario"  >Guardar</button>
+           <a class="btn btn-primary" href="/links/listadoClasesAsesoradas" >Cancelar</a>
+          </div>
+          </div>
+          </div>
+				
+				</form>
+
+			

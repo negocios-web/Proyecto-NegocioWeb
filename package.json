@@ -1,0 +1,39 @@
+{
+  "name": "negocios-web",
+  "version": "1.0.0",
+  "description": "Proyecto del III Parcial",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.1.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm",
+    "start": "nodemon src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negocios-web/Proyecto-NegocioWeb.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Loreste Marcel, Luis Dario, Norman Altamirano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/negocios-web/Proyecto-NegocioWeb/issues"
+  },
+  "homepage": "https://github.com/negocios-web/Proyecto-NegocioWeb#readme"
+}

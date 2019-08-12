@@ -1,0 +1,39 @@
+<form class="container login" id="formulario-hora" method="POST" action="/links/editarOferta">
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <div class="col-md-8" align="center">
+          <div class="col-md-6" align="center">
+            <input  type="text" hidden="" name="txtId" value="{{link.idOfertaClase}}">
+            <h3 style="padding-bottom: 2%;">Clase:</h3>
+                <div class="input-group" >
+                  
+                      <input class="form-control" readonly required type="text" name="txtClase" value="{{link.nombreClase}}">
+                    </div>  
+                </div>				
+  				<div class="col-md-6" align="center">
+  					<h3 style="padding-bottom: 2%;">Hora</h3>
+            <div class="input-group" >
+              <div class="col-md-6">
+  					   <input class="form-control" required type="time" name="txthoraInicio" value="{{link.horaInicio}}">
+               </div>
+               <div class="col-md-6">
+               
+               <input class="form-control" required type="time" name="txthoraFinal" value="{{link.horaFinal}}">
+               </div>
+               
+            </div>
+  				</div>
+					<br>
+          </div>
+          <div class="col-md-4" align="center">
+            <br>
+            <br>
+					 <button type="submit" class="btn btn-primary">Guardar</button>
+           <a class="btn btn-primary" href="/links/listadoClasesOfertadas" >Cancelar</a>
+          </div>
+          </div>
+          </div>
+				
+				</form>
+
+			

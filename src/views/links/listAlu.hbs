@@ -1,0 +1,38 @@
+<div class="container" id="formulario-listadoAlumno" align=""> 
+      <div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<br>
+	<h2>Listado de alumnos</h2>
+	<br>
+	<a href="/links/alumnos" class="btn btn-primary">Nuevo</a>
+	<br>
+
+<table class="table table-hover">
+	<thead >
+    	<tr>
+			<td scope="col">Identidad</td>
+			<td scope="col">Nombre Completo</td>
+			<td scope="col">Acciones</td>
+		</tr>
+	</thead>
+  	<tbody>
+      {{#each links}}
+			<tr>
+				<td>{{numeroCuenta}}</td>
+				<td>{{nombreCompleto}}</td>
+				<td>
+					<a class="btn btn-primary" href="/links/editarAlumno/{{numeroCuenta}}">Editar</a>
+					<a class="btn btn-primary" href="/links/eliminarAlumno/{{numeroCuenta}}" >Eliminar</a>
+				</td>
+			</tr>
+		{{/each}}
+			 
+  			</tbody>
+		</table>
+		<div class="row" align="right">
+		<a class="btn btn-primary" href="/links/menu">Atras</a>
+		</div>
+	</div>
+</div>
+  </div>

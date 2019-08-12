@@ -1,0 +1,42 @@
+<div class="container" id="formulario-listadoAlumno" align=""> 
+      <div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<br>
+	<h2>Listado de clases asesoradas</h2>
+	<br>
+	<a href="/links/horaClase" class="btn btn-primary">Nueva oferta</a>
+	<br>
+	<br>
+
+<table class="table table-hover">
+	<thead >
+    	<tr>
+			<td scope="col">Código clase</td>
+			<td scope="col">Nombre Clase</td>
+			<td scope="col">Numero Alumnos</td>
+			<td scope="col">Ofertada</td>
+			<td scope="col">Acciones</td>
+		</tr>
+	</thead>
+  	<tbody>
+      {{#each links}}
+			<tr>
+				<td>{{codigoClase}}</td>
+				<td>{{nombreClase}}</td>
+				<td>{{numeroAlumnos}}</td>
+				<td>{{Ofetada}}</td>
+				<td>
+					<a class="btn btn-primary" href="/links/verListaClaseAlumnos/{{codigoClase}}" >ver lista</a>
+				</td>
+			</tr>
+		{{/each}}
+			 
+  			</tbody>
+		</table>
+		<div class="row" align="right">
+		<a class="btn btn-primary" href="/links/menu">Atras</a>
+		</div>
+	</div>
+</div>
+  </div>

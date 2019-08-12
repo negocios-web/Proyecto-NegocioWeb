@@ -1,0 +1,43 @@
+<div class="container" id="formulario-listadoAlumno" align=""> 
+      <div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<br>
+	<h2>Listado de clases</h2>
+	
+	
+	<br>
+
+<table class="table table-hover">
+	<thead >
+    	<tr>
+			<td scope="col">Código clase</td>
+			<td scope="col">Nombre Clase</td>
+			<td scope="col">Hora</td>
+			<td scope="col">Matricula</td>
+			<td scope="col">Acciones</td>
+		</tr>
+	</thead>
+  	<tbody>
+      {{#each links}}
+			<tr>
+				<td>{{idClase}}</td>
+				<td>{{nombreClase}}</td>
+				<td>{{horaInicio}}-{{horaFinal}}</td>
+				<td><center>{{numero}}</center></td>
+				<td>
+					<a class="btn btn-primary" href="/links/verListaClaseAlumnosMatriculadas/{{idOfertaClase}}" >Ver lista</a>
+					<a class="btn btn-primary" href="/links/editarOferta/{{idOfertaClase}}" >Editar</a>
+					<a class="btn btn-primary" href="/links/eliminarOferta/{{idOfertaClase}}">Eliminar</a>
+				</td>
+			</tr>
+		{{/each}}
+			 
+  			</tbody>
+		</table>
+		<div class="row" align="right">
+		<a class="btn btn-primary" href="/links/menu">Atras</a>
+		</div>
+	</div>
+</div>
+  </div>
