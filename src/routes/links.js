@@ -241,6 +241,8 @@ router.get('/verListaClaseAlumnosMatriculadas/:idOfertaClase', async (req, res) 
 });
 
 router.get('/pagos', async (req, res) => {
-    res.render('links/pagos');
+
+    const links = await pool.query('SELECT tabla_detalle_matricula_alumno.`numeroCuenta`, tabla_alumnos.nombreCompleto, COUNT(`id_clase`) as clasesMatriculadas, CASE WHEN(SELECT COUNT(*) FROM tabla_pagos WHERE tabla_pagos.estado) = 1  THEN "PGD"  END as estado FROM`tabla_detalle_matricula_alumno` INNER JOIN tabla_pagos ON tabla_pagos.numeroCuenta = tabla_detalle_matricula_alumno.numeroCuenta INNER JOIN tabla_alumnos ON tabla_alumnos.numeroCuenta = tabla_detalle_matricula_alumno.numeroCuenta INNER JOIN tabla_oferta_clase ON tabla_oferta_clase.idOfertaClase = tabla_detalle_matricula_alumno.idOfertaClase INNER JOIN tabla_clases ON tabla_clases.id_clase = tabla_oferta_clase.idClase WHERE tabla_detalle_matricula_alumno.idOfertaClase GROUP BY numeroCuenta');
+    res.render('links/pagos', { links });
 });
 module.exports = router;
