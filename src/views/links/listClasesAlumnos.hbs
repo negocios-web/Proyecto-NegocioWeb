@@ -1,0 +1,37 @@
+<div class="container" id="formulario-listarClasesAlumno" align="">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+            <br>
+            <h2>({{link.numeroCuenta}}) {{link.nombreCompleto}} </h2>
+            <br>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td scope="col">Codigo Clase</td>
+                        <td scope="col">Clase</td>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each links}}
+                        <tr>
+                            <td>{{idClase}}</td>
+                            <td>{{idnombreClase}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="row" align="right">
+                <a class="btn btn-primary" href="/links/links/pagos">Atras</a>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
