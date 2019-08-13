@@ -1,5 +1,49 @@
-<form action="container login" id="" method="POST" action="/links/pagos">
+<form action="container" id="formulario-listadoPagos" action="/links/pagos">
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
 
+        <br>
+        <h2>Listado de pagos de clases</h2>
+        <br>
+        <br>
+        <br>
+    </div>
+    
+    <table  class="table table-hover">
+
+        <thead>
+            <tr>
+                <td scope="col">Nombre Alumnos</td>
+                <td scope="col">Clases Matriculadas</td>
+                <td scope="col">Estado Pago</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each links}}
+
+                <tr>
+                    <td>{{numeroCuenta}}</td>
+                    <td>{{nombreCompleto}}</td>
+                    <td>{{codigoClases}}</td>
+                    <td>{{estado}}</td>
+                    <td>
+                        <a href="btn btn-primary"> Ver lista</a> 
+                        <a href="btn btn-primary">Pagar</a>    
+                    </td>
+
+                </tr>
+                
+                
+            {{/each}}
+        </tbody>
+    </table>
+
+
+
+
+
+</div>
 
 
 </form>
