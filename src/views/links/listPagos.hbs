@@ -1,4 +1,4 @@
-<form action="container" id="formulario-listadoPagos" action="/links/pagos">
+<div action="container" id="formulario-listadoPagos" action="/links/pagos">
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -11,9 +11,9 @@
         <br>
         <br>
         <br>
-    </div>
     
-    <table  class="table table-hover">
+    
+<table  class="table table-hover">
 
         <thead>
             <tr>
@@ -21,6 +21,7 @@
                 <td scope="col">Nombre Alumno</td>
                 <td scope="col">Clases Matriculadas</td>
                 <td scope="col">Estado</td>
+                <td scope="col">Acciones</td>
             </tr>
         </thead>
         <tbody>
@@ -32,8 +33,7 @@
                     <td>{{clasesMatriculadas}}</td>
                     <td>{{estado}}</td>
                     <td>
-                        <a class="btn btn-primary" href="/links/verListaClasesAlumno/{{numeroCuenta}}"> Ver lista</a> 
-                        <a class="btn btn-primary" href="">Pagar</a>    
+                        <a class="btn btn-primary" href="/links/verListaClasesAlumno/{{numeroCuenta}}"> Ver lista</a>    
                     </td>
 
                 </tr>
@@ -45,9 +45,8 @@
 
 
 
-
-
+    </div>
 </div>
 
 
-</form>
+</div>
