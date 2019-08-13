@@ -250,10 +250,10 @@ router.get('/pagos', async (req, res) => {
 // Ver lista de clases matriculadas por el almno
 router.get('/verListaClasesAlumno/:numeroCuenta', async (req, res) => {
     const { numeroCuenta } = req.params;
+    const alumno = await pool.query('SELECT tabla_detalle_matricula_alumno.`numeroCuenta`, tabla_alumnos.nombreCompleto FROM `tabla_detalle_matricula_alumno` INNER JOIN tabla_alumnos ON tabla_alumnos.numeroCuenta = tabla_detalle_matricula_alumno.numeroCuenta WHERE tabla_detalle_matricula_alumno.numeroCuenta = ?', [numeroCuenta]);
     const links = await pool.query('SELECT tabla_clases.id_clase, tabla_clases.nombreClase, tabla_detalle_matricula_alumno.`numeroCuenta`, tabla_alumnos.nombreCompleto FROM`tabla_detalle_matricula_alumno` INNER JOIN tabla_alumnos ON tabla_alumnos.numeroCuenta = tabla_detalle_matricula_alumno.numeroCuenta INNER JOIN tabla_oferta_clase ON tabla_oferta_clase.idOfertaClase = tabla_detalle_matricula_alumno.idOfertaClase INNER JOIN tabla_clases ON tabla_clases.id_clase = tabla_oferta_clase.idClase WHERE tabla_detalle_matricula_alumno.numeroCuenta = ?', [numeroCuenta]);
-    res.render('links/listClasesAlumnos', { links });
-    
-    console.log(links);
+    res.render('links/listClasesAlumnos', { links, link: alumno[0] });
+
     
 });
 module.exports = router;
