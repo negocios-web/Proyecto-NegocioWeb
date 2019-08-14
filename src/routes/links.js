@@ -274,7 +274,7 @@ router.post('/realizarPagoAlumno', async (req, res) => {
     links.forEach(async (links) => {
     if (links.numero == 1) {
         await pool.query('INSERT INTO `tabla_pagos` (`numeroCuenta`) VALUES(?)', [cuentaAlumno]);
-        req.flash('success', 'Pago Registrado');
+        req.flash('success', 'Pago registrado');
         res.redirect('/links/Pagos');
     } else {
         req.flash('success', 'Pago ya registrado');
