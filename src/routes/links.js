@@ -276,15 +276,15 @@ router.post('/realizarPagoAlumno', async (req, res) => {
     const newLink = {
         cuentaAlumno
     };
-    const links = await pool.query('SELECT count(*) as numero FROM `tabla_alumnos` WHERE `numeroCuenta` = ?', [cuentaAlumno]);
+    const links = await pool.query('SELECT count(*) as numero FROM `tabla_pagos` WHERE `numeroCuenta` = ?', [cuentaAlumno]);
     console.log(links);
     links.forEach(async (links) => {
-    if (links.numero == 1) {
+    if (links.numero == 0) {
         await pool.query('INSERT INTO `tabla_pagos` (`numeroCuenta`) VALUES(?)', [cuentaAlumno]);
         req.flash('success', 'Pago registrado');
         res.redirect('/links/Pagos');
     } else {
-        req.flash('success', 'Pago ya registrado');
+        req.flash('success', 'El pago ya registrado para este alumno');
         res.redirect('/links/Pagos');
     } 
     });
