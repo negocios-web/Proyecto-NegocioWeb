@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2019 a las 01:13:25
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.0.27
+-- Tiempo de generación: 14-08-2019 a las 15:20:12
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,10 +74,6 @@ CREATE TABLE `login` (
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`user`, `password`) VALUES
-('Administrador', 'Administrador'),
-('Juan', '12345');
-
 -- --------------------------------------------------------
 
 --
@@ -87,7 +83,7 @@ INSERT INTO `login` (`user`, `password`) VALUES
 CREATE TABLE `sessions` (
   `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `expires` int(11) UNSIGNED NOT NULL,
-  `data` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin
+  `data` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -95,7 +91,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('a_XxFGvhr83s9VwWd7IbgVROBGjeiHtZ', 1565217529, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}');
+('CJWX1spFDvkL95MH0PCkKZefrY9gTxqy', 1565856460, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('_gucQDt4jub4qHWKLzKfHD0-hjSoHMb6', 1565770857, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('dI2THPHl4YBfr7cyGRhovZ_EnSv3VYrh', 1565833294, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('ogAL0H9Rb9LBs0051rfrqCSE2KhLJ9wC', 1565818763, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}');
 
 -- --------------------------------------------------------
 
@@ -106,19 +105,14 @@ INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
 CREATE TABLE `tabla_alumnos` (
   `numeroCuenta` varchar(13) NOT NULL,
   `nombreCompleto` varchar(80) NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT '1'
+  `estado` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tabla_alumnos`
 --
 
-INSERT INTO `tabla_alumnos` (`numeroCuenta`, `nombreCompleto`, `estado`) VALUES
-('1010101010101', 'Nicol Diaz', 1),
-('1111111111111', 'Mario Carcamo', 1),
-('2020202020202', 'Allan Claros2', 1),
-('2222222222222', 'Maria del Carme', 1),
-('3333333333333', 'Mario Cerrato', 1);
+
 
 -- --------------------------------------------------------
 
@@ -212,11 +206,7 @@ CREATE TABLE `tabla_detalle_asesoria_clase` (
 -- Volcado de datos para la tabla `tabla_detalle_asesoria_clase`
 --
 
-INSERT INTO `tabla_detalle_asesoria_clase` (`codigoClase`, `numeroCuenta`) VALUES
-('ES101', '1010101010101'),
-('ES101', '1111111111111'),
-('FI101', '1010101010101'),
-('MT101', '1010101010101');
+
 
 -- --------------------------------------------------------
 
@@ -229,6 +219,12 @@ CREATE TABLE `tabla_detalle_matricula_alumno` (
   `numeroCuenta` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tabla_detalle_matricula_alumno`
+--
+
+
+
 -- --------------------------------------------------------
 
 --
@@ -240,16 +236,30 @@ CREATE TABLE `tabla_oferta_clase` (
   `idClase` varchar(10) NOT NULL,
   `horaInicio` time NOT NULL,
   `horaFinal` time NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT '1'
+  `estado` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tabla_oferta_clase`
 --
 
-INSERT INTO `tabla_oferta_clase` (`idOfertaClase`, `idClase`, `horaInicio`, `horaFinal`, `estado`) VALUES
-(1, 'AD101', '12:00:00', '12:51:00', 0),
-(3, 'CT201', '07:00:00', '07:50:00', 0);
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tabla_pagos`
+--
+
+CREATE TABLE `tabla_pagos` (
+  `numeroCuenta` varchar(13) NOT NULL,
+  `estado` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tabla_pagos`
+--
+
 
 --
 -- Índices para tablas volcadas
@@ -299,6 +309,12 @@ ALTER TABLE `tabla_oferta_clase`
   ADD KEY `idClase` (`idClase`);
 
 --
+-- Indices de la tabla `tabla_pagos`
+--
+ALTER TABLE `tabla_pagos`
+  ADD PRIMARY KEY (`numeroCuenta`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -306,7 +322,7 @@ ALTER TABLE `tabla_oferta_clase`
 -- AUTO_INCREMENT de la tabla `tabla_oferta_clase`
 --
 ALTER TABLE `tabla_oferta_clase`
-  MODIFY `idOfertaClase` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idOfertaClase` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
