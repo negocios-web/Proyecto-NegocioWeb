@@ -291,4 +291,26 @@ router.post('/realizarPagoAlumno', async (req, res) => {
 });
 
 
+router.post('/guardarUsuario', async (req, res) => {
+    const { txtNombreNuevoUsuario, txtContraseñaNuevoUsuario } = req.body;
+    const newLink = {
+        txtNombreNuevoUsuario,
+        txtContraseñaNuevoUsuario
+    };
+
+    const links = await pool.query('SELECT COUNT(*) AS numero FROM `login`WHERE `user` = ?', [txtNombreNuevoUsuario]);
+
+    links.forEach(async (links) => {
+        if (links.numero == 0) {
+           await pool.query('INSERT INTO `login`(`user`, `password`) VALUES(?,?)', [txtNombreNuevoUsuario, txtContraseñaNuevoUsuario]);
+            req.flash('success', 'Usuario registrasdo');
+            res.redirect('/links/Login');
+        } else {
+
+            req.flash('success', 'Ya hay un usuario con ese nombre');
+            res.redirect('/links/Login');
+        } 
+    });
+});
+
 module.exports = router;
