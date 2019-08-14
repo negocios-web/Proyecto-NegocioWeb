@@ -256,4 +256,12 @@ router.get('/verListaClasesAlumno/:numeroCuenta', async (req, res) => {
 
     
 });
+
+router.get('/guardarPagoAlumno', async (req, res) => {
+
+    // const links = await pool.query('');
+    res.render('links/pagos');
+});
+
+
 module.exports = router;
