@@ -1,4 +1,4 @@
-<form class="container login" method="POST" action="/links/guardarPagoAlumno">
+<form class="container login" method="POST" action="/links/realizarPagoAlumno">
     <div class="row">
         <h1 class="text-center">Pago</h1>
         <div class="container">
@@ -12,10 +12,10 @@
                             <h3>Alumno </h3>
                             <br>
                 
-                            <select required="" class="form-control" name="listadoAlumnos" id="listadoAlumnos">
+                            <select required="" class="form-control" name="cuentaAlumno" id="cuentaAlumno">
                                 <option value="">Seleccione...</option>
                                 {{#each alumnos}}
-                                <option value="{{numeroCuenta}}">{{nombreCompleto}}</option>
+                                    <option value="{{numeroCuenta}}">{{nombreCompleto}}</option>
                                 {{/each}}
                 
                             </select>
@@ -24,7 +24,7 @@
                         <div class="col-md-2">
                             <br>
                             <br>
-                            <button class="btn btn-primary" type="submit">Guardar</button>
+                            <button class="btn btn-primary"  type="submit"> Guardar </button>
                             <a class="btn btn-primary" href="/links/pagos">Cancelar</a>
                 
                             </center>

@@ -257,10 +257,30 @@ router.get('/verListaClasesAlumno/:numeroCuenta', async (req, res) => {
     
 });
 
-router.get('/guardarPagoAlumno', async (req, res) => {
 
+router.get('/guardarPagoAlumno', async (req, res) => {
+    
     const alumnos = await pool.query('SELECT `numeroCuenta`, `nombreCompleto` FROM `tabla_alumnos`');
     res.render('links/pagos', {alumnos});
+});
+
+router.post('/realizarPagoAlumno', async (req, res) => {
+    const {cuentaAlumno } = req.body;
+    const newLink = {
+        cuentaAlumno
+    };
+    const links = await pool.query('SELECT `numeroCuenta` FROM `tabla_alumnos` WHERE `numeroCuenta`= ?', [cuentaAlumno]);
+    console.log(links);
+    links.forEach(async (links) => {
+    if (links.numeroCuenta == 0) {
+        await pool.query('INSERT INTO `tabla_pagos` (`numeroCuenta`) VALUES(?)', [cuentaAlumno]);
+        req.flash('success', 'Pago Registrado');
+        res.redirect('/links/Pagos');
+    } else {
+        req.flash('success', 'Pago ya registrado');
+        res.redirect('/links/Pagos');
+    } 
+    });
 });
 
 
