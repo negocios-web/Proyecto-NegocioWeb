@@ -259,8 +259,8 @@ router.get('/verListaClasesAlumno/:numeroCuenta', async (req, res) => {
 
 router.get('/guardarPagoAlumno', async (req, res) => {
 
-    // const links = await pool.query('');
-    res.render('links/pagos');
+    const alumnos = await pool.query('SELECT `numeroCuenta`, `nombreCompleto` FROM `tabla_alumnos`');
+    res.render('links/pagos', {alumnos});
 });
 
 
