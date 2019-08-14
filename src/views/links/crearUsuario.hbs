@@ -1,0 +1,29 @@
+<form class="container" id="formulario-nuevoUsuario" method="POST" action="/links/guardarUsuario">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+            <br>
+            <br>
+            <br>
+            <h2 class="text-center">Registro Usuarios</h2>
+            <br>
+            <br>
+
+            <div class="form-group">
+                <label>Nombre usuario:</label>
+                <input type="text" class="form-control" name="txtNombreNuevoUsuario" maxlength="13"
+                    placeholder="Ingrese su nombre de usuario">
+            </div>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="text" class="form-control" name="txtContraseñaNuevoUsuario"
+                    placeholder="Ingrese su contraseña">
+            </div>
+            <br>
+            <center>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/links/login" id="btnCancelaNuevoUsuario" class="btn btn-primary">Cancelar</a>
+            </center>
+        </div>
+    </div>
+</form>

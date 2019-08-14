@@ -13,6 +13,13 @@ router.get('/login', (req, res) => {
     res.render('links/login');
 });
 
+
+router. get('/crearUsuario', (req, res) =>{
+
+    res.render('links/crearUsuario');
+});
+
+
 router.get('/menu', (req, res) => {
     res.render('links/menu');
 });
