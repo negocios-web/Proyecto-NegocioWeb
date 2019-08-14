@@ -282,10 +282,10 @@ router.post('/realizarPagoAlumno', async (req, res) => {
     if (links.numero == 0) {
         await pool.query('INSERT INTO `tabla_pagos` (`numeroCuenta`) VALUES(?)', [cuentaAlumno]);
         req.flash('success', 'Pago registrado');
-        res.redirect('/links/Pagos');
+        res.redirect('/links/GuardarPagoAlumno');
     } else {
-        req.flash('success', 'El pago ya registrado para este alumno');
-        res.redirect('/links/Pagos');
+        req.flash('success', 'Pago ya registrado');
+        res.redirect('/links/GuardarPagoAlumno');
     } 
     });
 });
@@ -304,11 +304,11 @@ router.post('/guardarUsuario', async (req, res) => {
         if (links.numero == 0) {
            await pool.query('INSERT INTO `login`(`user`, `password`) VALUES(?,?)', [txtNombreNuevoUsuario, txtContraseñaNuevoUsuario]);
             req.flash('success', 'Usuario registrasdo');
-            res.redirect('/links/Login');
+            res.redirect('/links/CrearUsuario');
         } else {
 
             req.flash('success', 'Ya hay un usuario con ese nombre');
-            res.redirect('/links/Login');
+            res.redirect('/links/CrearUsuario');
         } 
     });
 });
