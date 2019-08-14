@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2019 a las 15:20:12
+-- Tiempo de generación: 14-08-2019 a las 22:25:46
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -74,6 +74,9 @@ CREATE TABLE `login` (
 -- Volcado de datos para la tabla `login`
 --
 
+INSERT INTO `login` (`user`, `password`) VALUES
+('Luis', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -92,7 +95,9 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
 ('CJWX1spFDvkL95MH0PCkKZefrY9gTxqy', 1565856460, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
-('_gucQDt4jub4qHWKLzKfHD0-hjSoHMb6', 1565770857, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('ERbChKLF-Rja9w9oOu-99_3mS7z3Umdu', 1565876501, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('I_oHmGx6JEma0sYZYl0rHrq8-YD4wLjs', 1565900481, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
+('PHiBp-VYznm1zvx9ndaTOeM12d4CKTvg', 1565887596, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
 ('dI2THPHl4YBfr7cyGRhovZ_EnSv3VYrh', 1565833294, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}'),
 ('ogAL0H9Rb9LBs0051rfrqCSE2KhLJ9wC', 1565818763, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"flash\":{}}');
 
@@ -112,7 +117,9 @@ CREATE TABLE `tabla_alumnos` (
 -- Volcado de datos para la tabla `tabla_alumnos`
 --
 
-
+INSERT INTO `tabla_alumnos` (`numeroCuenta`, `nombreCompleto`, `estado`) VALUES
+('0318199601500', 'Loreste Marcel', 1),
+('0318199801179', 'Norman Alfredo', 1);
 
 -- --------------------------------------------------------
 
@@ -206,7 +213,8 @@ CREATE TABLE `tabla_detalle_asesoria_clase` (
 -- Volcado de datos para la tabla `tabla_detalle_asesoria_clase`
 --
 
-
+INSERT INTO `tabla_detalle_asesoria_clase` (`codigoClase`, `numeroCuenta`) VALUES
+('ES101', '0318199801179');
 
 -- --------------------------------------------------------
 
@@ -223,6 +231,9 @@ CREATE TABLE `tabla_detalle_matricula_alumno` (
 -- Volcado de datos para la tabla `tabla_detalle_matricula_alumno`
 --
 
+INSERT INTO `tabla_detalle_matricula_alumno` (`idOfertaClase`, `numeroCuenta`) VALUES
+(1, '0318199601500'),
+(1, '0318199801179');
 
 
 -- --------------------------------------------------------
@@ -243,7 +254,8 @@ CREATE TABLE `tabla_oferta_clase` (
 -- Volcado de datos para la tabla `tabla_oferta_clase`
 --
 
-
+INSERT INTO `tabla_oferta_clase` (`idOfertaClase`, `idClase`, `horaInicio`, `horaFinal`, `estado`) VALUES
+(1, 'AD101', '08:00:00', '08:50:00', 1);
 
 -- --------------------------------------------------------
 
@@ -260,6 +272,9 @@ CREATE TABLE `tabla_pagos` (
 -- Volcado de datos para la tabla `tabla_pagos`
 --
 
+INSERT INTO `tabla_pagos` (`numeroCuenta`, `estado`) VALUES
+('0318199601500', 1),
+('0318199801179', 1);
 
 --
 -- Índices para tablas volcadas
@@ -322,7 +337,7 @@ ALTER TABLE `tabla_pagos`
 -- AUTO_INCREMENT de la tabla `tabla_oferta_clase`
 --
 ALTER TABLE `tabla_oferta_clase`
-  MODIFY `idOfertaClase` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idOfertaClase` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

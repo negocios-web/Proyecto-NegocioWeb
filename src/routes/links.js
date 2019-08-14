@@ -282,7 +282,7 @@ router.post('/realizarPagoAlumno', async (req, res) => {
     if (links.numero == 0) {
         await pool.query('INSERT INTO `tabla_pagos` (`numeroCuenta`) VALUES(?)', [cuentaAlumno]);
         req.flash('success', 'Pago registrado');
-        res.redirect('/links/GuardarPagoAlumno');
+        res.redirect('/links/Pagos');
     } else {
         req.flash('success', 'Pago ya registrado');
         res.redirect('/links/GuardarPagoAlumno');
